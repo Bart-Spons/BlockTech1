@@ -1,0 +1,29 @@
+{
+  "name": "blocktech",
+  "version": "1.0.0",
+  "description": "BlockTech uitleg",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bart-Spons/BlockTech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bart-Spons/BlockTech/issues"
+  },
+  "homepage": "https://github.com/Bart-Spons/BlockTech#readme",
+  "dependencies": {
+    "camelcase": "^7.0.1",
+    "chalk": "^5.2.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
