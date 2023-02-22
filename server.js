@@ -1,29 +1,30 @@
 // const express = require('express');
 // const app = express(); 
-// const PORT = process.env.port || 1337;
+// const expbs = require('express-handlebars');
 
-// const chalk = require('chalk');
-// import chalk from 'chalk';
+// app.engine('handlebars', expbs({ defaultLayout: 'main' }));
+// app.set('view engine', 'handlebars');
 
-// const warning = chalk.hex('#FFA500');
+// //Routing
+// app.get('/', (req, res) => {
+//     res.render('index');
+// });
 
-// app.get('/', onHome).listen(PORT, console.log(chalk.blue(`test de port: ${PORT}`)));
+// app.listen(8000, () => {
+//     console.log('server is starting at port ', 8000);
+// });
 
-// function onHome(req, res){
-//     res.send('Hallo')
-// }
+import express from 'express';
+import { engine } from 'express-handlebars';
 
-const express = require('express');
-const app = express(); 
-const PORT = process.env.port || 1337;
-const chalk = require('chalk');
+const app = express();
 
-const warning = chalk.hex('#FFA500');
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', './views');
 
-app.get('/', onHome).listen(PORT, () => {
-    console.log(chalk.blue(`test de port: ${PORT}`));
+app.get('/', (req, res) => {
+    res.render('home');
 });
 
-function onHome(req, res){
-    res.send('Hallo');
-}
+app.listen(3000);
