@@ -8,6 +8,13 @@ const port = 1900;
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
+// lijst met namen inladen in de liked.ejs pagina
+const people = [
+  { name: 'John', age: 30 },
+  { name: 'Jens', age: 25 },
+  { name: 'Bob', age: 40 }
+];
+
 // hello world test
 app.get("/", (req, res) => {
     res.send("Hello World!");
@@ -15,19 +22,12 @@ app.get("/", (req, res) => {
 
   // routing
 app.get("/liked", (req, res) => {
-    res.render("liked.ejs", { data: port });
+    // res.render("liked.ejs", { data: port });
+    res.render("liked.ejs", { people });
   });
 
-//css
-// app.get('*.css', function(req, res, next) {
-//     res.header('Content-Type', 'text/css');
-//     next();
-//   });
+  
 
- //404 
-// app.use(function (req, res) {
-//     res.status(404).render("404.ejs");
-//   });
 
   app.use((req, res, next) => {
     res.status(404).send("404");

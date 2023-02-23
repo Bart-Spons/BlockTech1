@@ -13,7 +13,15 @@
     <h1>test liked</h1>
 
     <!-- laat het port nummer zien -->
-    <%= data %>
+
+
+    <ul>
+        <% for (let person of people) { %>
+            <li>
+                <%= person.name %> is <%= person.age %> jaar oud!
+            </li>
+            <% } %>
+    </ul>
 
 </body>
 
