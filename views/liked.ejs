@@ -5,23 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Voetbal</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <h1>test liked</h1>
 
-    <!-- laat het port nummer zien -->
+    <header>
+        <a href="index.html">
+            <img src="images/1x/logo.png" alt="logo">
+        </a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><img src="images/1x/home2.png" alt="home"></a></li>
+            <li><a class="active" href="zoek.html"><img src="images/1x/zoek.png" alt="zoek"></a></li>
+            <li><a href="match.html"><img src="images/1x/match.png" alt="match"></a></li>
+            <li><a href="account.html"><img src="images/1x/account.png" alt="account"></a></li>
+        </ul>
+    </nav>
+    <!-- start of main -->
+    <main>
+        <h1>Zoek jouw ideale speler!</h1>
+        <!-- <a href="zoek2.html">
+            <img src="images/1x/tony.png">
+        </a> -->
+        <h2>filter</h2>
+
+        <section class="grid-container">
+            <section>
+                <button>Nee</button>
+            </section>
+            <section>
+                <img src="images/persoon.png" alt="peroon1">
+                <h2>jens</h2>
+                <p>aanvaller</p>
+                <p>Amsterdam</p>
+            </section>
+            <section>
+                <button>Ja</button>
+            </section>
+        </section>
+
+        <h2>test met namen vanuit index.js</h2>
+        <ul>
+            <% for (let person of people) { %>
+                <li>
+                    <%= person.name %> is <%= person.age %> jaar oud!
+                </li>
+                <% } %>
+        </ul>
 
 
-    <ul>
-        <% for (let person of people) { %>
-            <li>
-                <%= person.name %> is <%= person.age %> jaar oud!
-            </li>
-            <% } %>
-    </ul>
+
+    </main>
+
+    <!-- start of footer-->
+    <footer>
+        <section>
+            <section class="footeritem">
+                <p>&#169;Copyright 2023</p>
+            </section>
+            <section class="footeritem2">
+                <p>Bart Spons - BlockTech</p>
+            </section>
+        </section>
+    </footer>
+
 
 </body>
 

@@ -1,3 +1,169 @@
+header img{
+    width: 100%;
+}
+
 body{
-    color: lightseagreen;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f1e3;
+}
+
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  
+main section {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+ main section img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button{
+    margin: .5em;
+    padding: .7em;
+    font-size: 1.3em;
+    font-weight: bold;
+    color:#d1c3a2;
+    background-color: #fff;
+    border: 2px solid #f7f1e3;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    align-self: end;
+  }
+
+ main section section:first-of-type button:focus{
+    color: red;
+    border: 2px solid red;
+    
+  }
+
+ main section section:last-of-type button:focus{ 
+    color: green;
+    border: 2px solid green;
+  }
+
+  button:focus{
+    
+    
+    box-shadow: 0 0 0 1px rgb(red, green, blue);
+    animation: anim-shadow .3s forwards;
+  }
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: dimgrey;
+    flex: 1 1 0px;
+    margin-bottom: revert;
+    margin-top: -0.3em;
+  }
+  
+  /* style for the nav bar list item */
+  nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  /* style for nav li */
+  nav li{
+      width: 25%;
+  }
+  
+  /* style for image in navbar */
+  nav ul li a img{
+      height: 2em;
+  }
+  
+  /* if you move the curses over the nav bar if shows a dark color */
+  nav li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  /* local page turns green in nav bar */
+  .active {
+      background-color: #1B816A;
+      margin-top: 1px;
+  }
+  
+  /* Styling for the h1(title of the page) */
+  h1{
+      text-align: center;
+      padding: 0.5em;
+      font-family: Avenir black;
+      font-size: 1.8em;
+      color: #1B816A;
+  }
+  
+  /* styling for h2 and h3 */
+  h2,h3{
+      text-align: center;
+      font-family: Avenir black;
+  }
+  
+  /* styling for p */
+  p{
+      text-align: center;
+      margin-top: 0.5em;
+      font-family: Avenir;
+  }
+  
+  /* give all a items a font */
+  a{
+      font-family: Monaco;
+  }
+
+  main a{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+
+  footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1B816A;
+    color: white;
+    text-align: center;
+    margin-top: 19em;
+}
+
+/* style for the text in the footer */
+footer p{
+    margin: 0.5em;
+}
+
+/* style for the text in the footer */
+footer section{
+    display: flex;
+}
+
+/* style for the first content section in the footer */
+.footeritem{
+    width: 50%;
+}
+
+/* style for the second content section in the footer */
+.footeritem2{
+    width: 50%;
+    justify-content: right;
 }
