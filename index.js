@@ -22,6 +22,7 @@ const people = [
 //mongoDB
 
 
+
 // hello world test, dit is de startpagina
 app.get("/", (req, res) => {
     res.send("Hello World!");

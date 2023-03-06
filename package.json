@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bart-Spons/BlockTech.git"
+    "url": "git+https://github.com/Bart-Spons/BlockTech1.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Bart-Spons/BlockTech/issues"
+    "url": "https://github.com/Bart-Spons/BlockTech1/issues"
   },
-  "homepage": "https://github.com/Bart-Spons/BlockTech#readme",
+  "homepage": "https://github.com/Bart-Spons/BlockTech1#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
     "camelcase": "^7.0.1",
