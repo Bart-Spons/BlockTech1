@@ -14,10 +14,13 @@ app.set("view engine", "ejs");
 
 // lijst met namen inladen in de liked.ejs pagina
 const people = [
-  { name: 'John', age: 30 },
+  { name: 'Thijmen', age: 30 },
   { name: 'Jens', age: 25 },
-  { name: 'Bob', age: 40 }
+  { name: 'Bryan', age: 40 }
 ];
+
+//mongoDB
+
 
 // hello world test, dit is de startpagina
 app.get("/", (req, res) => {
