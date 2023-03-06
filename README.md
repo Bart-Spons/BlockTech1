@@ -1,6 +1,6 @@
 # BlockTech1
 
-Welkom bij de ReadMe van BlockTech
+Welkom bij de ReadMe van BlokTech
 
 ## Mijn idee
 
@@ -8,9 +8,9 @@ Je wilt een voetbalteam oprichten of je hebt al een team en zoekt nog spelers. D
 
 ### De feature
 
-Als feature ga ik een filter functie doorsturen, bij iedere persoon zijn een aantal gegevens te zien:
+Als feature ga ik een filter functie maken. Bij iedere persoon zijn een aantal gegevens te zien:
 - Leeftijd
 - Positie
 - Woonplaats
 
-Omdat je misschien specifiek opzoek bent naar een bepaald persoon voor je voetbalteam is het handig om een filter toe te passen
+In een voetbalteam heb je heel veel posities dus als je misschien specifiek opzoek bent naar een bepaald persoon voor je voetbalteam is het handig om een filter toe te passen zodat je niet door de hele lijst hoeft te scrollen.
