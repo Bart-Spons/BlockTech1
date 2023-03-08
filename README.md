@@ -1,16 +1,50 @@
 # BlockTech1
 
-Welkom bij de ReadMe van BlockTech
+Welkom bij de ReadMe van BlokTech
 
 ## Mijn idee
 
 Je wilt een voetbalteam oprichten of je hebt al een team en zoekt nog spelers. Dit is natuurlijk moeilijk om ergens spelers te vinden die bij je team passen. Door gebruik te maken van app kun je zien welke mensen nog zoekende zijn naar een team.
 
-### De feature
+## De feature
 
-Als feature ga ik een filter functie doorsturen, bij iedere persoon zijn een aantal gegevens te zien:
+Als feature ga ik een filter functie maken. Bij iedere persoon zijn een aantal gegevens te zien:
 - Leeftijd
 - Positie
 - Woonplaats
 
-Omdat je misschien specifiek opzoek bent naar een bepaald persoon voor je voetbalteam is het handig om een filter toe te passen
+In een voetbalteam heb je heel veel posities dus als je misschien specifiek opzoek bent naar een bepaald persoon voor je voetbalteam is het handig om een filter toe te passen zodat je niet door de hele lijst hoeft te scrollen.
+
+## Gebruiken
+
+Ik heb de applicatie gemaakt voor mobiel formaat dus als je naar een ejs pagina gaat moet je f12 gebruiken om deze goed in beeld te krijgen.
+
+## Gebouwd met behulp van:
+- node js
+- git
+- ejs
+- express
+
+## Installeren
+Want to start up my app and you have no idea how? Follow the next steps! (if you are a pro already, you can skip the pre-installation).
+
+🔨 Pre-installation:
+- NODE.js
+- Install NodeJs
+- Type node install in your terminal
+- Or use node --version to check if you have node on your computer
+
+GIT
+- Type git install in your terminal
+- Or use git --version to check if you have GIT on your computer
+
+
+## mijn applicatie gebruiken
+
+git clone
+
+## Database
+
+MongoDB
+
+## License
