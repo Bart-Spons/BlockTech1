@@ -1,49 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include ('header.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voetbal</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-
-    <nav>
-        <ul>
-            <li><a href="index.html"><img src="images/1x/home2.png" alt="home"></a></li>
-            <li><a class="active" href="zoek.html"><img src="images/1x/zoek.png" alt="zoek"></a></li>
-            <li><a href="match.html"><img src="images/1x/match.png" alt="match"></a></li>
-            <li><a href="account.html"><img src="images/1x/account.png" alt="account"></a></li>
-        </ul>
-    </nav>
-    <!-- start of main -->
     <main>
         <h1>Zoek jouw ideale speler!</h1>
-        <!-- <a href="zoek2.html">
-            <img src="images/1x/tony.png">
-        </a> -->
-        <h2>filter</h2>
-
-        <section class="grid-container">
-            <section>
-                <button>Nee</button>
-            </section>
-            <section>
-                <img src="images/persoon.png" alt="peroon1">
-                <h2>jens</h2>
-                <p>aanvaller</p>
-                <p>Amsterdam</p>
-            </section>
-            <section>
-                <button>Ja</button>
-            </section>
-        </section>
 
         <h2>test met namen vanuit het index.js bestand</h2>
-        <ul>
+        <button id="show-data-btn">Show data</button>
+        <button id="filter-age-btn">Filter by age 21</button>
+        <ul id="people-list" style="display:none">
             <% for (let naam of people) { %>
                 <li>
                     <%= naam.name %> is <%= naam.age %> jaar oud!
@@ -51,24 +14,23 @@
                 <% } %>
         </ul>
 
+        <h2>Filter</h2>
 
-
-
-    </main>
-
-    <!-- start of footer-->
-    <footer>
-        <section>
-            <section class="footeritem">
-                <p>&#169;Copyright 2023</p>
+        <section class="grid-container">
+            <section>
+                <button>Nee</button>
             </section>
-            <section class="footeritem2">
-                <p>Bart Spons - BlockTech</p>
+            <section>
+                <img src="images/persoon.png" alt="persoon1">
+                <h2>Jens</h2>
+                <p>Aanvaller</p>
+                <p>Amsterdam</p>
+            </section>
+            <section>
+                <button>Ja</button>
             </section>
         </section>
-    </footer>
+    </main>
 
-
-</body>
-
-</html>
+    <%- include ('footer.ejs') %>
+        <script src="../scripts/script.js"></script>

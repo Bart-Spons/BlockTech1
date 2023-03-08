@@ -1,0 +1,21 @@
+<%- include ('header.ejs') %>
+
+    <main>
+        <h1>Ztest!</h1>
+
+        <h2>test met namen vanuit het index.js bestand</h2>
+        <button id="show-data-btn">Show data</button>
+        <button id="filter-age-btn">Filter by age 21</button>
+
+        <ul id="people-list">
+            <% for (let naam of filteredPeople) { %>
+                <li>
+                    <%= naam.name %> is <%= naam.age %> jaar oud!
+                </li>
+                <% } %>
+        </ul>
+
+
+
+        <%- include ('footer.ejs') %>
+            <script src="../scripts/script.js"></script>

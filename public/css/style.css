@@ -80,6 +80,7 @@ nav ul {
     padding: 14px;
     text-decoration: none;
   }
+
   
   /* style for nav li */
   nav li{
@@ -98,10 +99,10 @@ nav ul {
   
   /* local page turns green in nav bar */
   .active {
-      background-color: #1B816A;
+  background-color: #1B816A;
       margin-top: 1px;
   }
-  
+
   /* Styling for the h1(title of the page) */
   h1{
       text-align: center;
@@ -112,10 +113,11 @@ nav ul {
   }
   
   /* styling for h2 and h3 */
-  h2,h3{
+  h2,h3,h4,h5{
       text-align: center;
       font-family: Avenir black;
   }
+
   
   /* styling for p */
   p{
