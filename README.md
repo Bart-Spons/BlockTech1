@@ -19,11 +19,24 @@ In een voetbalteam heb je heel veel posities dus als je misschien specifiek opzo
 
 Ik heb de applicatie gemaakt voor mobiel formaat dus als je naar een ejs pagina gaat moet je f12 gebruiken om deze goed in beeld te krijgen.
 
-## Installeren
+## Gebouwd met behulp van:
 - node js
 - git
 - ejs
+- express
 
+## Installeren
+Want to start up my app and you have no idea how? Follow the next steps! (if you are a pro already, you can skip the pre-installation).
+
+🔨 Pre-installation:
+- NODE.js
+- Install NodeJs
+- Type node install in your terminal
+- Or use node --version to check if you have node on your computer
+
+GIT
+- Type git install in your terminal
+- Or use git --version to check if you have GIT on your computer
 
 
 ## mijn applicatie gebruiken
