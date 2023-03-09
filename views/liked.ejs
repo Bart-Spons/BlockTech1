@@ -3,34 +3,17 @@
     <main>
         <h1>Zoek jouw ideale speler!</h1>
 
-        <h2>test met namen vanuit het index.js bestand</h2>
-        <button id="show-data-btn">Show data</button>
-        <button id="filter-age-btn">Filter by age 21</button>
-        <ul id="people-list" style="display:none">
-            <% for (let naam of people) { %>
-                <li>
-                    <%= naam.name %> is <%= naam.age %> jaar oud!
-                </li>
-                <% } %>
+        <button id="show-data-btn">Laat alles zien</button>
+        <select id="positie-filters">
+            <option value="aanvaller">Aanvaller</option>
+            <option value="verdediger">Verdediger</option>
+            <option value="middenvelder">Middenvelder</option>
+            <option value="keeper">Doelman</option>
+        </select>
+
+        <ul id="people-list">
+
         </ul>
 
-        <h2>Filter</h2>
-
-        <section class="grid-container">
-            <section>
-                <button>Nee</button>
-            </section>
-            <section>
-                <img src="images/persoon.png" alt="persoon1">
-                <h2>Jens</h2>
-                <p>Aanvaller</p>
-                <p>Amsterdam</p>
-            </section>
-            <section>
-                <button>Ja</button>
-            </section>
-        </section>
-    </main>
-
-    <%- include ('footer.ejs') %>
-        <script src="../scripts/script.js"></script>
+        <%- include ('footer.ejs') %>
+            <script src="../scripts/script.js"></script>

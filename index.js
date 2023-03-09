@@ -1,4 +1,5 @@
-const express  = require('express')
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const express = require('express');
 const http = require("http");
 const app = express();
 
@@ -20,6 +21,14 @@ const people = [
 ];
 
 
+// Load password from .env file
+require('dotenv').config();
+
+const password = process.env.PASSWORD;
+
+const uri = "mongodb+srv://bartspons31:" + password + "@cluster0.0r8mcrj.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
 //filer
 
 
@@ -34,9 +43,9 @@ request.get({
   headers: {
     'X-Api-Key': 'NSPYPZBVLJoPjB7ugsSq2Q==IkXme4SJceLYrhXX'
   },
-}, function(error, response, body) {
-  if(error) return console.error('Request failed:', error);
-  else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
+}, function (error, response, body) {
+  if (error) return console.error('Request failed:', error);
+  else if (response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
   else {
     const quote = body.split(`"`)
     console.log(quote[3]);
@@ -47,34 +56,34 @@ request.get({
 
 // hello world test, dit is de startpagina
 app.get("/", (req, res) => {
-  res.locals.title = "Homepagina";    
-  res.render("index.ejs");
+  res.locals.title = "Homepagina";
+  res.render("index.ejs", { quotes });
 
-  });
+});
 app.get("/index", (req, res) => {
-  res.locals.title = "Homepagina";    
-  res.render("index.ejs", { people, quotes});
+  res.locals.title = "Homepagina";
+  res.render("index.ejs", { people, quotes });
 
-  });
+});
 
 // routing en people inladen
 const path = require('path');
 
 app.get("/liked", (req, res) => {
-    // res.render("liked.ejs", { data: port });
-    res.locals.title = "Liked";
-    res.render("liked.ejs", { people }); 
-  });
+  // res.render("liked.ejs", { data: port });
+  res.locals.title = "Liked";
+  res.render("liked.ejs", { people });
+});
 
-  app.get("/test", (req, res) => {
-    // res.render("liked.ejs", { data: port });
-    res.locals.title = "test";
-    // dit zorgt ervoor dat de filer 21 jaar is
-    const filteredPeople = people.filter(person => person.age === 21);    
-    res.render("test.ejs", { filteredPeople }); 
-  });
+app.get("/test", (req, res) => {
+  // res.render("liked.ejs", { data: port });
+  res.locals.title = "test";
+  // dit zorgt ervoor dat de filer 21 jaar is
+  const filteredPeople = people.filter(person => person.age === 21);
+  res.render("test.ejs", { filteredPeople });
+});
 
-  //form  
+//form  
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/form', (req, res) => {
@@ -86,12 +95,35 @@ app.post('/submit', (req, res) => {
   const email = req.body.email;
   res.send(`Name: ${name}, Email: ${email}`);
 });
+
+
+
+
+//uit database halen
+app.get('/people', (req, res) => {
+  const database = client.db("BackEnd");
+  const collection = database.collection("Bart");
+
+  let query = {};
+
+  if (req.query.positie) {
+    const positie = req.query.positie;
+    query = { positie: positie };
+  }
   
+  collection.find(query).toArray().then((result) => {
+    res.send(result);
+  });
+});
+
+
+
+
 
 //de 404 pagina
-  app.use((req, res, next) => {
-    res.status(404).send("404");
-  });
+app.use((req, res, next) => {
+  res.status(404).send("404");
+});
 
 
 app.listen(port, () => console.log(`Ga naar de poort: ${port}`));

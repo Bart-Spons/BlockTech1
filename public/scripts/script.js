@@ -1,17 +1,31 @@
-// const showDataBtn = document.getElementById('show-data-btn');
-// const filterAgeBtn = document.getElementById('filter-age-btn');
-// const peopleList = document.getElementById('people-list');
+const showDataBtn = document.getElementById('show-data-btn');
+const positieDropdown = document.getElementById('positie-filters');
+const peopleList = document.getElementById('people-list');
 
-// showDataBtn.addEventListener('click', () => {
-//   peopleList.style.display = 'block';
-// });
+showDataBtn.addEventListener('click', () => {
+  laadSpelers();
+});
 
-// filterAgeBtn.addEventListener('click', () => {
-//   const filteredPeople = people.filter(person => person.age === 21);
-//   let html = '';
-//   for (let person of filteredPeople) {
-//     html += `<li>${person.name} is ${person.age} jaar oud!</li>`;
-//   }
-//   peopleList.innerHTML = html;
-//   peopleList.style.display = 'block';
-// });
+positieDropdown.addEventListener('change', (event) => {
+  laadSpelers(event.target.value);
+});
+
+function laadSpelers(positie) {
+  let url = 'http://localhost:1900/people';
+
+  if (positie) {
+    url += '?positie=' + positie;
+  }
+
+fetch(url).then(response => {
+  return response.json();
+}).then(data => {
+  // Wanneer data klaar staat
+  let html = '';
+  for (let person of data) {
+    html += `<li>${person.naam} is ${person.positie}</li>`;
+  }
+  peopleList.innerHTML = html;
+  peopleList.style.display = 'block';
+});
+}
