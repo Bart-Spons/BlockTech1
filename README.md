@@ -50,5 +50,4 @@ git clone
 MongoDB
 
 ## License
-MIT
 [MIT](https://github.com/Bart-Spons/BlokTech1/blob/main/LICENSE)
