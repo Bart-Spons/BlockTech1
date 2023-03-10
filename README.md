@@ -2,6 +2,8 @@
 
 Welkom bij de ReadMe van BlokTech
 
+![image](https://user-images.githubusercontent.com/62010539/224106082-a8f33c7e-0f9f-4301-b7e9-cd4aad6db873.png)
+
 ## Mijn idee
 
 Je wilt een voetbalteam oprichten of je hebt al een team en zoekt nog spelers. Dit is natuurlijk moeilijk om ergens spelers te vinden die bij je team passen. Door gebruik te maken van app kun je zien welke mensen nog zoekende zijn naar een team.
@@ -9,7 +11,7 @@ Je wilt een voetbalteam oprichten of je hebt al een team en zoekt nog spelers. D
 ## De feature
 
 Als feature ga ik een filter functie maken. Bij iedere persoon zijn een aantal gegevens te zien:
-- Leeftijd
+
 - Positie
 - Woonplaats
 
@@ -48,3 +50,4 @@ git clone
 MongoDB
 
 ## License
+[MIT](https://github.com/Bart-Spons/BlokTech1/blob/main/LICENSE)
