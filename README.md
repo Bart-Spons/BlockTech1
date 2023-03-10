@@ -47,7 +47,7 @@ git clone
 
 ## Database
 
-MongoDB
+De database die ik gebruik is [MongoDB](https://www.mongodb.com/). Deze database bevat alle gegevens van de voetballers.
 
 ## License
 [MIT](https://github.com/Bart-Spons/BlokTech1/blob/main/LICENSE)
