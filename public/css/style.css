@@ -103,6 +103,10 @@ nav ul {
       margin-top: 1px;
   }
 
+  a{
+    color: #d1c3a2;
+  }
+
   /* Styling for the h1(title of the page) */
   h1{
       text-align: center;

@@ -3,17 +3,19 @@
     <main>
         <h1>Zoek jouw ideale speler!</h1>
 
+
         <button id="show-data-btn">Laat alles zien</button>
+        <!-- moet formulier worden, en via post naar back end -->
         <select id="positie-filters">
             <option value="aanvaller">Aanvaller</option>
             <option value="verdediger">Verdediger</option>
             <option value="middenvelder">Middenvelder</option>
-            <option value="keeper">Doelman</option>
+            <option value="keeper">Keeper</option>
         </select>
 
         <ul id="people-list">
 
         </ul>
-
-        <%- include ('footer.ejs') %>
-            <script src="../scripts/script.js"></script>
+    </main>
+    <%- include ('footer.ejs') %>
+        <script src="../scripts/script.js"></script>

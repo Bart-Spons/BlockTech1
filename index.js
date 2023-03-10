@@ -21,7 +21,7 @@ const people = [
 ];
 
 
-// Load password from .env file
+// Laad het wachtworod in van het .env bestand
 require('dotenv').config();
 
 const password = process.env.PASSWORD;
@@ -31,8 +31,6 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 //filer
 
-
-//mongoDB
 
 //API 
 let quotes;
@@ -54,7 +52,7 @@ request.get({
 });
 
 
-// hello world test, dit is de startpagina
+// Dit is de startpagina
 app.get("/", (req, res) => {
   res.locals.title = "Homepagina";
   res.render("index.ejs", { quotes });
@@ -73,14 +71,6 @@ app.get("/liked", (req, res) => {
   // res.render("liked.ejs", { data: port });
   res.locals.title = "Liked";
   res.render("liked.ejs", { people });
-});
-
-app.get("/test", (req, res) => {
-  // res.render("liked.ejs", { data: port });
-  res.locals.title = "test";
-  // dit zorgt ervoor dat de filer 21 jaar is
-  const filteredPeople = people.filter(person => person.age === 21);
-  res.render("test.ejs", { filteredPeople });
 });
 
 //form  
@@ -117,6 +107,30 @@ app.get('/people', (req, res) => {
 });
 
 
+
+//database
+const database = client.db("BackEnd");
+const collection = database.collection("Bart");
+
+//filter pagina
+app.get("/test", (req, res) => {
+  collection.find({}).toArray().then((people) => {
+    res.locals.title = "test";
+    res.render("test.ejs", { people });
+  });
+});
+
+//filter toepassen
+app.post("/test", (req, res) => {
+  const positie = req.body.positie;
+
+  collection.find({ positie }).toArray().then((people) => {
+    res.locals.title = "test";
+    res.render("test.ejs", { people });
+  });
+});
+
+// Comfortabel met het feit dat je het niet snapt - Robert
 
 
 

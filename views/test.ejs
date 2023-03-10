@@ -2,36 +2,44 @@
 
     <main>
         <h1>Zoek je ideale speler!</h1>
-
-
-        <button id="show-data-btn">Laat alles zien</button>
-        <select id="positie-filters">
-            <option value="aanvaller">Aanvaller</option>
-            <option value="verdediger">Verdediger</option>
-            <option value="middenvelder">Middenvelder</option>
-            <option value="keeper">Doelman</option>
-        </select>
+        <!-- form aangemaakt -->
+        <form action="/test" method="post">
+            <select name="positie">
+                <option value="aanvaller">Aanvaller</option>
+                <option value="verdediger">Verdediger</option>
+                <option value="middenvelder">Middenvelder</option>
+                <option value="keeper">Doelman</option>
+            </select>
+            <!-- gaat spelers zoeken -->
+            <input type="submit" value="Zoek" />
+        </form>
 
         <ul id="people-list">
-
+            <% for (let person of people) { %>
+                <li>
+                    <%= person.naam %> is <%= person.positie %>!
+                </li>
+                <% } %>
         </ul>
 
-        <h2>Filter</h2>
+        <!--
+            <h2>Filter</h2>
 
-        <section class="grid-container">
-            <section>
-                <button>Nee</button>
+            <section class="grid-container">
+                <section>
+                    <button>Nee</button>
+                </section>
+                <section>
+                    <img src="images/persoon.png" alt="persoon1">
+                    <h2>Jens</h2>
+                    <p>Aanvaller</p>
+                    <p>Amsterdam</p>
+                </section>
+                <section>
+                    <button>Ja</button>
+                </section>
             </section>
-            <section>
-                <img src="images/persoon.png" alt="persoon1">
-                <h2>Jens</h2>
-                <p>Aanvaller</p>
-                <p>Amsterdam</p>
-            </section>
-            <section>
-                <button>Ja</button>
-            </section>
-        </section>
+        -->
     </main>
 
 
