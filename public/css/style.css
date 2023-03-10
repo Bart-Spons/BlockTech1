@@ -97,11 +97,17 @@ nav ul {
     background-color: #111;
   }
   
+
+
   /* local page turns green in nav bar */
   .active {
   background-color: #1B816A;
       margin-top: 1px;
   }
+
+form{
+  text-align: center;
+}
 
   a{
     color: #d1c3a2;

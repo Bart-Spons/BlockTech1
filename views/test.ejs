@@ -1,14 +1,15 @@
 <%- include ('header.ejs') %>
 
     <main>
-        <h1>Zoek je ideale speler!</h1>
+        <h1>Zoek je <span id="changeMe">ideale</span> speler!</h1>
         <!-- form aangemaakt -->
+        <p>Gebruik de filter hieronder</p>
         <form action="/test" method="post">
             <select name="positie">
                 <option value="aanvaller">Aanvaller</option>
                 <option value="verdediger">Verdediger</option>
                 <option value="middenvelder">Middenvelder</option>
-                <option value="keeper">Doelman</option>
+                <option value="keeper">Keeper</option>
             </select>
             <!-- gaat spelers zoeken -->
             <input type="submit" value="Zoek" />
@@ -22,24 +23,10 @@
                 <% } %>
         </ul>
 
-        <!--
-            <h2>Filter</h2>
 
-            <section class="grid-container">
-                <section>
-                    <button>Nee</button>
-                </section>
-                <section>
-                    <img src="images/persoon.png" alt="persoon1">
-                    <h2>Jens</h2>
-                    <p>Aanvaller</p>
-                    <p>Amsterdam</p>
-                </section>
-                <section>
-                    <button>Ja</button>
-                </section>
-            </section>
-        -->
+
+
+
     </main>
 
 

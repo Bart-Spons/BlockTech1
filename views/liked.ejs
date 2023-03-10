@@ -1,21 +1,30 @@
 <%- include ('header.ejs') %>
 
     <main>
-        <h1>Zoek jouw ideale speler!</h1>
 
+        <h1>Voeg speler toe</h1>
 
-        <button id="show-data-btn">Laat alles zien</button>
-        <!-- moet formulier worden, en via post naar back end -->
-        <select id="positie-filters">
-            <option value="aanvaller">Aanvaller</option>
-            <option value="verdediger">Verdediger</option>
-            <option value="middenvelder">Middenvelder</option>
-            <option value="keeper">Keeper</option>
-        </select>
+        <form action="/addPerson" method="post">
+            <label for="naam">Naam:</label>
+            <input type="text" id="naam" name="naam">
 
-        <ul id="people-list">
+            <label for="positie">Positie:</label>
+            <select id="positie" name="positie">
+                <option value="aanvaller">Aanvaller</option>
+                <option value="verdediger">Verdediger</option>
+                <option value="middenvelder">Middenvelder</option>
+                <option value="keeper">Keeper</option>
+            </select>
 
-        </ul>
+            <label for="woonplaats">Woonplaats:</label>
+            <input type="text" id="woonplaats" name="woonplaats">
+
+            <input type="submit" value="Toevoegen">
+        </form>
+
+        <h2>Zoek je speler</h2>
+        <p>Als je een gebruiker hebt toegevoegd staat deze op de overzichtspagina erbij.</p>
+
     </main>
     <%- include ('footer.ejs') %>
         <script src="../scripts/script.js"></script>

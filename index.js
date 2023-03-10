@@ -15,9 +15,7 @@ app.set("view engine", "ejs");
 
 // lijst met namen inladen in de liked.ejs pagina
 const people = [
-  { name: 'Thijmen', age: 30 },
-  { name: 'Jens', age: 25 },
-  { name: 'Samantha', age: 21 }
+  
 ];
 
 
@@ -28,8 +26,6 @@ const password = process.env.PASSWORD;
 
 const uri = "mongodb+srv://bartspons31:" + password + "@cluster0.0r8mcrj.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
-//filer
 
 
 //API 
@@ -55,11 +51,19 @@ request.get({
 // Dit is de startpagina
 app.get("/", (req, res) => {
   res.locals.title = "Homepagina";
+  res.locals.activehome = "active";
+  res.locals.activezoek = "";
+  res.locals.activematch = "";
+  res.locals.activeaccount = "";
   res.render("index.ejs", { quotes });
 
 });
 app.get("/index", (req, res) => {
   res.locals.title = "Homepagina";
+  res.locals.activehome = "active";
+  res.locals.activezoek = "";
+  res.locals.activematch = "";
+  res.locals.activeaccount = "";
   res.render("index.ejs", { people, quotes });
 
 });
@@ -70,10 +74,14 @@ const path = require('path');
 app.get("/liked", (req, res) => {
   // res.render("liked.ejs", { data: port });
   res.locals.title = "Liked";
+  res.locals.activehome = "";
+  res.locals.activezoek = "active";
+  res.locals.activematch = "";
+  res.locals.activeaccount = "";
   res.render("liked.ejs", { people });
 });
 
-//form  
+//form oefening huiswerk
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/form', (req, res) => {
@@ -89,7 +97,7 @@ app.post('/submit', (req, res) => {
 
 
 
-//uit database halen
+//uit database halen met link
 app.get('/people', (req, res) => {
   const database = client.db("BackEnd");
   const collection = database.collection("Bart");
@@ -108,7 +116,7 @@ app.get('/people', (req, res) => {
 
 
 
-//database
+//database 
 const database = client.db("BackEnd");
 const collection = database.collection("Bart");
 
@@ -116,21 +124,69 @@ const collection = database.collection("Bart");
 app.get("/test", (req, res) => {
   collection.find({}).toArray().then((people) => {
     res.locals.title = "test";
+    res.locals.activehome = "";
+    res.locals.activezoek = "";
+    res.locals.activematch = "active";
+    res.locals.activeaccount = "";
     res.render("test.ejs", { people });
   });
 });
 
 //filter toepassen
 app.post("/test", (req, res) => {
+  res.locals.activehome = "";
+  res.locals.activezoek = "";
+  res.locals.activematch = "active";
+  res.locals.activeaccount = "";
   const positie = req.body.positie;
-
   collection.find({ positie }).toArray().then((people) => {
     res.locals.title = "test";
     res.render("test.ejs", { people });
+
+    //dit werkt maar moet in een apparte app.post
+  //   const person = {
+  //     naam: req.body.naam,
+  //     positie: req.body.positie,
+  //     woonplaats: req.body.woonplaats
+  //   };
+  
+  //   collection.insertOne(person, (err, result) => {
+  //     if (err) {
+  //       console.log(err);
+  //       return res.status(500).send(err);
+  //     }
+  
+  //     // Redirect to the test page to show the updated collection
+  //     res.redirect("/test");
+  //   });
+
+   });
+});
+
+app.post("/addPerson", (req, res) => {
+  const person = {
+    naam: req.body.naam,
+    positie: req.body.positie,
+    woonplaats: req.body.woonplaats
+  };
+
+  collection.insertOne(person, (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).send(err);
+    }
+
+    // Redirect to the test page to show the updated collection
+    res.redirect("/test");
   });
 });
 
-// Comfortabel met het feit dat je het niet snapt - Robert
+//add user
+  // Insert
+  //onst db = client.db("BackEnd");
+
+
+// Quote: Comfortabel met het feit dat je het niet snapt ~ Robert Spier
 
 
 
@@ -140,4 +196,6 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(port, () => console.log(`Ga naar de poort: ${port}`));
+app.listen(port, () => {
+  console.log(`Ga naar de poort: ${port}`)
+});
