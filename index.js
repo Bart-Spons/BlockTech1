@@ -1,23 +1,15 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const express = require('express');
-const http = require("http");
 const app = express();
 
 //dit is voor form.ejs
 const bodyParser = require('body-parser');
 
 //openen via localhost/1900
-const host = "localhost";
 const port = 1900;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-
-// lijst met namen inladen in de liked.ejs pagina
-const people = [
-  
-];
-
 
 // Laad het wachtworod in van het .env bestand
 require('dotenv').config();
@@ -47,7 +39,6 @@ request.get({
   }
 });
 
-
 // Dit is de startpagina
 app.get("/", (req, res) => {
   res.locals.title = "Homepagina";
@@ -56,29 +47,16 @@ app.get("/", (req, res) => {
   res.locals.activematch = "";
   res.locals.activeaccount = "";
   res.render("index.ejs", { quotes });
-
-});
-app.get("/index", (req, res) => {
-  res.locals.title = "Homepagina";
-  res.locals.activehome = "active";
-  res.locals.activezoek = "";
-  res.locals.activematch = "";
-  res.locals.activeaccount = "";
-  res.render("index.ejs", { people, quotes });
-
 });
 
 // routing en people inladen
-const path = require('path');
-
-app.get("/liked", (req, res) => {
-  // res.render("liked.ejs", { data: port });
-  res.locals.title = "Liked";
+app.get("/add", (req, res) => {
+  res.locals.title = "Toevoegen";
   res.locals.activehome = "";
   res.locals.activezoek = "active";
   res.locals.activematch = "";
   res.locals.activeaccount = "";
-  res.render("liked.ejs", { people });
+  res.render("add.ejs");
 });
 
 //form oefening huiswerk
@@ -94,72 +72,34 @@ app.post('/submit', (req, res) => {
   res.send(`Name: ${name}, Email: ${email}`);
 });
 
-
-
-
-//uit database halen met link
-app.get('/people', (req, res) => {
-  const database = client.db("BackEnd");
-  const collection = database.collection("Bart");
-
-  let query = {};
-
-  if (req.query.positie) {
-    const positie = req.query.positie;
-    query = { positie: positie };
-  }
-  
-  collection.find(query).toArray().then((result) => {
-    res.send(result);
-  });
-});
-
-
-
 //database 
 const database = client.db("BackEnd");
 const collection = database.collection("Bart");
 
 //filter pagina
-app.get("/test", (req, res) => {
+app.get("/search", (req, res) => {
   collection.find({}).toArray().then((people) => {
-    res.locals.title = "test";
+    res.locals.title = "Search";
     res.locals.activehome = "";
     res.locals.activezoek = "";
     res.locals.activematch = "active";
     res.locals.activeaccount = "";
-    res.render("test.ejs", { people });
+    res.render("search.ejs", { people });
   });
 });
 
 //filter toepassen
-app.post("/test", (req, res) => {
+app.post("/search", (req, res) => {
+  res.locals.title = "Search";
   res.locals.activehome = "";
   res.locals.activezoek = "";
   res.locals.activematch = "active";
   res.locals.activeaccount = "";
+
   const positie = req.body.positie;
+
   collection.find({ positie }).toArray().then((people) => {
-    res.locals.title = "test";
-    res.render("test.ejs", { people });
-
-    //dit werkt maar moet in een apparte app.post
-  //   const person = {
-  //     naam: req.body.naam,
-  //     positie: req.body.positie,
-  //     woonplaats: req.body.woonplaats
-  //   };
-  
-  //   collection.insertOne(person, (err, result) => {
-  //     if (err) {
-  //       console.log(err);
-  //       return res.status(500).send(err);
-  //     }
-  
-  //     // Redirect to the test page to show the updated collection
-  //     res.redirect("/test");
-  //   });
-
+    res.render("search.ejs", { people });
    });
 });
 
@@ -170,28 +110,14 @@ app.post("/addPerson", (req, res) => {
     woonplaats: req.body.woonplaats
   };
 
-  collection.insertOne(person, (err, result) => {
-    if (err) {
-      console.log(err);
-      return res.status(500).send(err);
-    }
-
-    // Redirect to the test page to show the updated collection
-    res.redirect("/test");
+  collection.insertOne(person, () => {
+    // Redirect to the serach page to show the updated collection
+    res.redirect("/search");
   });
 });
 
-//add user
-  // Insert
-  //onst db = client.db("BackEnd");
-
-
-// Quote: Comfortabel met het feit dat je het niet snapt ~ Robert Spier
-
-
-
 //de 404 pagina
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(404).send("404");
 });
 
