@@ -27,16 +27,15 @@ Ik heb de applicatie gemaakt voor mobiel formaat dus als je naar een ejs pagina 
 - ejs
 - express
 
-## Installeren
-Want to start up my app and you have no idea how? Follow the next steps! (if you are a pro already, you can skip the pre-installation).
+## 🔨 Installeren
+Voordat je mijn project gaat clonen moet je een aantal programma’s eerst installeren.
 
-🔨 Pre-installation:
-- NODE.js
+### NODE.js
 - Install NodeJs
 - Type node install in your terminal
 - Or use node --version to check if you have node on your computer
 
-GIT
+### GIT
 - Type git install in your terminal
 - Or use git --version to check if you have GIT on your computer
 
