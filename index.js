@@ -11,11 +11,10 @@ const port = 1900;
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-// Laad het wachtworod in van het .env bestand
+// Verbinden met de databas en het .env bestand werkend maken
 require('dotenv').config();
-
+//Laad het wachtwoord in van het .env bestand
 const password = process.env.PASSWORD;
-
 const uri = "mongodb+srv://bartspons31:" + password + "@cluster0.0r8mcrj.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -103,6 +102,7 @@ app.post("/search", (req, res) => {
    });
 });
 
+// persoon toevoegen aan de database
 app.post("/addPerson", (req, res) => {
   const person = {
     naam: req.body.naam,
@@ -121,7 +121,7 @@ app.use((req, res) => {
   res.status(404).send("404");
 });
 
-
+//uitvoeren via de terminal
 app.listen(port, () => {
   console.log(`Ga naar de poort: ${port}`)
 });

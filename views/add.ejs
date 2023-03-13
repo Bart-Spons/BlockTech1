@@ -1,21 +1,22 @@
 <%- include ('header.ejs') %>
 
     <main>
-
+        <!--titel-->
         <h1>Voeg speler toe</h1>
-
+        <!--form beginnen-->
         <form action="/addPerson" method="post">
+            <!--vrije invoer bij naam-->
             <label for="naam">Naam:</label>
             <input type="text" id="naam" name="naam">
-
             <label for="positie">Positie:</label>
+            <!--select gebruikt omdat er maar vier posities zijn op een voetbalveld-->
             <select id="positie" name="positie">
                 <option value="aanvaller">Aanvaller</option>
                 <option value="verdediger">Verdediger</option>
                 <option value="middenvelder">Middenvelder</option>
                 <option value="keeper">Keeper</option>
             </select>
-
+            <!--vrije invoer bij woonplaats-->
             <label for="woonplaats">Woonplaats:</label>
             <input type="text" id="woonplaats" name="woonplaats">
 

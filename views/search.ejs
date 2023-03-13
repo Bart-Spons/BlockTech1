@@ -1,8 +1,10 @@
 <%- include ('header.ejs') %>
 
     <main>
+        <!-- De span is gaat uit als javascript wordt uitgezet (progressive enhancement) -->
+        <!--h1 is de titel-->
         <h1>Zoek je <span id="changeMe">ideale</span> speler!</h1>
-        <!-- form aangemaakt -->
+        <!-- Filter toevoegen -->
         <p>Gebruik de filter hieronder</p>
         <form action="/search" method="post">
             <select name="positie">
@@ -14,22 +16,14 @@
             <!-- gaat spelers zoeken -->
             <input type="submit" value="Zoek" />
         </form>
-
+        <!-- Gevens uit database zichtbaar maken -->
         <ul id="people-list">
             <% for (let person of people) { %>
                 <li>
-                    <%= person.naam %> is <%= person.positie %>!
+                    <%= person.naam %> is <%= person.positie %>
                 </li>
                 <% } %>
         </ul>
-
-
-
-
-
     </main>
-
-
-
     <%- include ('footer.ejs') %>
         <script src="../scripts/script.js"></script>
