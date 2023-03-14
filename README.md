@@ -43,6 +43,7 @@ Typ `node install` in de terminal
 Of gebruikt `node --version` om te checken of je node al hebt geinstalleerd op je computer
 
 ### GIT
+**Installeer GIT**
 Typ `git install` in je terminal
 
 Of gebruik `git --version` om te checken of je GIT al hebt geinstalleerd op je computer
