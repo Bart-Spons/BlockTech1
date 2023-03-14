@@ -11,10 +11,11 @@ const port = 1900;
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-// Verbinden met de databas en het .env bestand werkend maken
+// Laad het wachtworod in van het .env bestand
 require('dotenv').config();
-//Laad het wachtwoord in van het .env bestand
+
 const password = process.env.PASSWORD;
+
 const uri = "mongodb+srv://bartspons31:" + password + "@cluster0.0r8mcrj.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -48,6 +49,15 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { quotes });
 });
 
+app.get("/account", (req, res) => {
+  res.locals.title = "Account";
+  res.locals.activehome = "";
+  res.locals.activezoek = "";
+  res.locals.activematch = "";
+  res.locals.activeaccount = "active";
+  res.render("account.ejs");
+});
+
 // routing en people inladen
 app.get("/add", (req, res) => {
   res.locals.title = "Toevoegen";
@@ -58,18 +68,8 @@ app.get("/add", (req, res) => {
   res.render("add.ejs");
 });
 
-//form oefening huiswerk
+//form laten werken
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get('/form', (req, res) => {
-  res.render('form.ejs');
-});
-
-app.post('/submit', (req, res) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  res.send(`Name: ${name}, Email: ${email}`);
-});
 
 //database 
 const database = client.db("BackEnd");
@@ -102,7 +102,6 @@ app.post("/search", (req, res) => {
    });
 });
 
-// persoon toevoegen aan de database
 app.post("/addPerson", (req, res) => {
   const person = {
     naam: req.body.naam,
@@ -110,18 +109,20 @@ app.post("/addPerson", (req, res) => {
     woonplaats: req.body.woonplaats
   };
 
+  
+
   collection.insertOne(person, () => {
     // Redirect to the serach page to show the updated collection
-    res.redirect("/search");
+    res.redirect("/search", { person });
   });
 });
 
 //de 404 pagina
 app.use((req, res) => {
-  res.status(404).send("404");
+  res.status(404).send("404, foute pagina");
 });
 
-//uitvoeren via de terminal
+
 app.listen(port, () => {
   console.log(`Ga naar de poort: ${port}`)
 });
