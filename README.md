@@ -2,51 +2,75 @@
 
 Welkom bij de ReadMe van BlokTech
 
-![image](https://user-images.githubusercontent.com/62010539/224106082-a8f33c7e-0f9f-4301-b7e9-cd4aad6db873.png)
+![logo](https://user-images.githubusercontent.com/62010539/225015949-e18c0002-4816-4f25-91b5-1c5142f42faf.png)
 
-## Mijn idee
+
+# 🤔 Mijn idee
 
 Je wilt een voetbalteam oprichten of je hebt al een team en zoekt nog spelers. Dit is natuurlijk moeilijk om ergens spelers te vinden die bij je team passen. Door gebruik te maken van app kun je zien welke mensen nog zoekende zijn naar een team.
 
-## De feature
+## De feature!
 
 Als feature ga ik een filter functie maken. Bij iedere persoon zijn een aantal gegevens te zien:
-
+- Naam
 - Positie
 - Woonplaats
 
 In een voetbalteam heb je heel veel posities dus als je misschien specifiek opzoek bent naar een bepaald persoon voor je voetbalteam is het handig om een filter toe te passen zodat je niet door de hele lijst hoeft te scrollen.
 
-## Gebruiken
+***
 
-Ik heb de applicatie gemaakt voor mobiel formaat dus als je naar een ejs pagina gaat moet je f12 gebruiken om deze goed in beeld te krijgen.
+# 📖 Hoe moet je mijn applicatie gebruiken?
+
+Ik heb de applicatie gemaakt voor mobiel formaat dus als je naar een ejs pagina gaat moet je f12 gebruiken om deze goed in beeld te krijgen. Of je moet de pagina inspecteren (voor laptop/pc gebruikers).
 
 ## Gebouwd met behulp van:
-- node js
+- node.js
 - git
 - ejs
 - express
 
-## 🔨 Installeren
+***
+
+# 💁‍♂️ Installeren
 Voordat je mijn project gaat clonen moet je een aantal programma’s eerst installeren.
 
 ### NODE.js
-- Install NodeJs
-- Type node install in your terminal
-- Or use node --version to check if you have node on your computer
+**Installeer NodeJs**
+
+Typ `node install` in de terminal
+
+Of gebruikt `node --version` om te checken of je node al hebt geinstalleerd op je computer
 
 ### GIT
-- Type git install in your terminal
-- Or use git --version to check if you have GIT on your computer
+**Installeer GIT**
+Typ `git install` in je terminal
 
+Of gebruik `git --version` om te checken of je GIT al hebt geinstalleerd op je computer
 
-## mijn applicatie gebruiken
+***
 
-git clone
+# 💻 Mijn applicatie gebruiken
 
-## Database
+**Clone mijn repositorie**
+
+`git clone https://github.com/Bart-Spons/BlokTech1/`
+
+**Installeer NPM**
+
+`npm install`
+
+**Start Node.js**
+
+`npm start`
+
+***
+
+# 📊 Database
 
 De database die ik gebruik is [MongoDB](https://www.mongodb.com/). Deze database bevat alle gegevens van de voetballers.
 
-## License
+***
+
+# ©️ License
 [MIT](https://github.com/Bart-Spons/BlokTech1/blob/main/LICENSE)
