@@ -2,7 +2,8 @@
 
 Welkom bij de ReadMe van BlokTech
 
-![image](https://user-images.githubusercontent.com/62010539/224106082-a8f33c7e-0f9f-4301-b7e9-cd4aad6db873.png)
+![logo](https://user-images.githubusercontent.com/62010539/225015949-e18c0002-4816-4f25-91b5-1c5142f42faf.png)
+
 
 ## Mijn idee
 
