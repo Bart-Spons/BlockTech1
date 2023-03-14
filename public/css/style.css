@@ -30,7 +30,6 @@ main section {
   button{
     margin: .5em;
     padding: .7em;
-    font-size: 1.3em;
     font-weight: bold;
     color:#d1c3a2;
     background-color: #fff;
@@ -81,6 +80,9 @@ nav ul {
     text-decoration: none;
   }
 
+  main img{
+    max-width: 100%;
+  }
   
   /* style for nav li */
   nav li{
