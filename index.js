@@ -1,9 +1,11 @@
+//Databse
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const express = require('express');
 const app = express();
 
-//dit is voor form.ejs
+//dit is voor de form
 const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //openen via localhost/1900
 const port = 1900;
@@ -13,12 +15,9 @@ app.set("view engine", "ejs");
 
 // Laad het wachtworod in van het .env bestand
 require('dotenv').config();
-
 const password = process.env.PASSWORD;
-
 const uri = "mongodb+srv://bartspons31:" + password + "@cluster0.0r8mcrj.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-
 
 //API 
 let quotes;
@@ -39,7 +38,7 @@ request.get({
   }
 });
 
-// Dit is de startpagina
+//Dit is de startpagina
 app.get("/", (req, res) => {
   res.locals.title = "Homepagina";
   res.locals.activehome = "active";
@@ -49,6 +48,7 @@ app.get("/", (req, res) => {
   res.render("index.ejs", { quotes });
 });
 
+//Dit is de account pagina
 app.get("/account", (req, res) => {
   res.locals.title = "Account";
   res.locals.activehome = "";
@@ -58,7 +58,7 @@ app.get("/account", (req, res) => {
   res.render("account.ejs");
 });
 
-// routing en people inladen
+//Routing en people inladen
 app.get("/add", (req, res) => {
   res.locals.title = "Toevoegen";
   res.locals.activehome = "";
@@ -69,14 +69,11 @@ app.get("/add", (req, res) => {
 });
 
 
-//form laten werken
-app.use(bodyParser.urlencoded({ extended: true }));
-
-//database 
+//Specifiek mijn database zoeken in MongDB
 const database = client.db("BackEnd");
 const collection = database.collection("Bart");
 
-//filter pagina
+//Filter pagina
 app.get("/search", (req, res) => {
   collection.find({}).toArray().then((people) => {
     res.locals.title = "Search";
@@ -88,7 +85,7 @@ app.get("/search", (req, res) => {
   });
 });
 
-//filter toepassen
+//Filter toepassen
 app.post("/search", (req, res) => {
   res.locals.title = "Search";
   res.locals.activehome = "";
@@ -97,7 +94,6 @@ app.post("/search", (req, res) => {
   res.locals.activeaccount = "";
 
   const positie = req.body.positie;
-
   collection.find({ positie }).toArray().then((people) => {
     res.render("search.ejs", { people });
    });
@@ -109,16 +105,13 @@ app.post("/addPerson", (req, res) => {
     positie: req.body.positie,
     woonplaats: req.body.woonplaats
   };
-
-  
-
   collection.insertOne(person, () => {
-    // Redirect to the serach page to show the updated collection
+  // Redirect to the serach page to show the updated collection
     res.redirect("/search", { person });
   });
 });
 
-//de 404 pagina
+//De 404 pagina
 app.use((req, res) => {
   res.locals.title = "404";
   res.locals.activehome = "";
@@ -128,7 +121,7 @@ app.use((req, res) => {
   res.status(404).render('404.ejs');
 });
 
-
+//Zorgt ervoor dat je via de terminal de localhost kan starten op de 'port'
 app.listen(port, () => {
   console.log(`Ga naar de poort: ${port}`)
 });

@@ -6,6 +6,7 @@
         <!-- Filter toevoegen -->
         <p>Gebruik de filter hieronder</p>
         <form action="/search" method="post">
+            <!--Filter op positie, er zijn vier opties-->
             <select name="positie">
                 <option value="aanvaller">Aanvaller</option>
                 <option value="verdediger">Verdediger</option>
@@ -18,6 +19,7 @@
         <!-- Gevens uit database zichtbaar maken -->
         <ul id="people-list">
             <% for (let person of people) { %>
+                <!--Alle voetballers uit de database worden geladen-->
                 <li>
                     <%= person.naam %> is <%= person.positie %>
                 </li>

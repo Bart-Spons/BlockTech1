@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Titel, deze is op iedere pagina anders-->
     <title>
         <%= title %>
     </title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
+    <!--Icon voor in het tabblad van de browser-->
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico" alt="icon">
 </head>
 
 <body>
@@ -18,12 +20,12 @@
             <img src="images/1x/logo.png" alt="logo">
         </a>
     </header>
-
     <nav>
         <ul>
+            <!--De active verschilt per pagina, in index.js staat per pagina welke active is-->
             <li><a class="<%= activehome %>" href="/"><img src="images/1x/huis.png" alt="home"></a></li>
-            <li><a class="<%= activezoek %>" href="/add"><img src="images/1x/plus.png" alt="zoek"></a></li>
-            <li><a class="<%= activematch %>" href="/search"><img src="images/1x/zoek.png" alt="match"></a></li>
+            <li><a class="<%= activezoek %>" href="/add"><img src="images/1x/plus.png" alt="add"></a></li>
+            <li><a class="<%= activematch %>" href="/search"><img src="images/1x/zoek.png" alt="search"></a></li>
             <li><a class="<%= activeaccount %>" href="/account"><img src="images/1x/account.png" alt="account"></a>
             </li>
         </ul>
