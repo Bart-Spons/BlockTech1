@@ -92,7 +92,6 @@ app.post("/search", (req, res) => {
   res.locals.activezoek = "";
   res.locals.activematch = "active";
   res.locals.activeaccount = "";
-
   const positie = req.body.positie;
   collection.find({ positie }).toArray().then((people) => {
     res.render("search.ejs", { people });

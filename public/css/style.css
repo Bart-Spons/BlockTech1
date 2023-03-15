@@ -1,3 +1,4 @@
+/* Verzameling van alle kleuren */
 :root {
   --main-bg-color: #f7f1e3;
   --main-title-color: ;
@@ -12,165 +13,157 @@
   --footer-bg: #1B816A;
 }
 
-header img{
-    width: 100%;
-}
-
 body{
   margin: 0;
   padding: 0;
   background-color: var(--main-bg-color);
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+/* Start header */
+header img{
+    width: 100%;
 }
 
-main section img {
-  max-width: 100%;
-  height: auto;
-}
-
-  button{
-    margin: .5em;
-    padding: .7em;
-    font-weight: bold;
-    color: var(--main-button-color);
-    background-color: var(--main-button-bg);
-    border: var(--main-button-border);
-    border-radius: 15px;
-    outline: none;
-    cursor: pointer;
-    transition: .3s;
-    align-self: end;
-  }
-
+/* Start nav */
 nav ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: var(--nav-bg-color);
-    flex: 1 1 0px;
-    margin-bottom: revert;
-    margin-top: -0.3em;
-  }
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--nav-bg-color);
+  flex: 1 1 0px;
+  margin-bottom: revert;
+  margin-top: -0.3em;
+}
   
-  /* style for the nav bar list item */
-  nav li a {
-    display: block;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-  }
+/* style for nav li */
+nav li{
+  width: 25%;
+}  
 
-  main img{
-    display: block;
-    margin: 0 auto;
-    max-width: 50%;
-  }
+/* style for the nav bar list item */
+nav li a {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* style for image in navbar */
+nav ul li a img{
+  height: 2em;
+}
   
-  /* style for nav li */
-  nav li{
-      width: 25%;
-  }
+/* if you move the curses over the nav bar if shows a dark color */
+nav li a:hover:not(.active) {
+  background-color: var(--nav-li-hover);
+}
   
-  /* style for image in navbar */
-  nav ul li a img{
-      height: 2em;
-  }
-  
-  /* if you move the curses over the nav bar if shows a dark color */
-  nav li a:hover:not(.active) {
-    background-color: var(--nav-li-hover);
-  }
-  
-  /* local page turns green in nav bar */
-  .active {
+/* local page turns green in nav bar */
+.active {
   background-color: var(--nav-active);
-      margin-top: 1px;
-  }
+  margin-top: 1px;
+}
+
+/* Start main */
+
+button{
+  margin: .5em;
+  padding: .7em;
+  font-weight: bold;
+  color: var(--main-button-color);
+  background-color: var(--main-button-bg);
+  border: var(--main-button-border);
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: .3s;
+  align-self: end;
+}
 
 form{
   text-align: center;
 }
 
-  a{
-    color: var(--main-a);
-    text-decoration:none;
-  }
+a{
+  color: var(--main-a);
+  text-decoration:none;
+}
 
-  main section{
-    display:flex; 
-    justify-content:center;
-  }
+main section{
+  display:flex; 
+  justify-content:center;
+}
 
-  /* Styling for the h1(title of the page) */
-  h1{
-      text-align: center;
-      padding: 0.5em;
-      font-family: Avenir black;
-      font-size: 1.8em;
-      color: var(--main-h1);
-  }
+main img{
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+/* Styling for the h1(title of the page) */
+h1{
+  text-align: center;
+  padding: 0.5em;
+  font-family: Avenir black;
+  font-size: 1.8em;
+  color: var(--main-h1);
+}
   
-  /* styling for h2 and h3 */
-  h2,h3,h4,h5{
-      text-align: center;
-      font-family: Avenir black;
-  }
+/* styling for h2 and h3 */
+h2,h3,h4,h5{
+  text-align: center;
+  font-family: Avenir black;
+}  
 
+/* styling for p */
+p{
+  text-align: center;
+  margin-top: 0.5em;
+  font-family: Avenir;
+}
   
-  /* styling for p */
-  p{
-      text-align: center;
-      margin-top: 0.5em;
-      font-family: Avenir;
-  }
-  
-  /* give all a items a font */
-  a{
-      font-family: Monaco;
-  }
+/* give all a items a font */
+a{
+  font-family: Monaco;
+}
 
-  main a{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-  }
+main a{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
 
-
-  footer{
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--footer-bg);
-    color: white;
-    text-align: center;
-    margin-top: 19em;
+/* Start footer */
+footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--footer-bg);
+  color: white;
+  text-align: center;
+  margin-top: 19em;
 }
 
 /* style for the text in the footer */
 footer p{
-    margin: 0.5em;
+  margin: 0.5em;
 }
 
 /* style for the text in the footer */
 footer section{
-    display: flex;
+  display: flex;
 }
 
 /* style for the first content section in the footer */
 .footeritem{
-    width: 50%;
+  width: 50%;
 }
 
 /* style for the second content section in the footer */
 .footeritem2{
-    width: 50%;
-    justify-content: right;
+  width: 50%;
+  justify-content: right;
 }
