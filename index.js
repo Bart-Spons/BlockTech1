@@ -98,6 +98,7 @@ app.post("/search", (req, res) => {
    });
 });
 
+//Persoon toevoegen
 app.post("/addPerson", (req, res) => {
   const person = {
     //Gegevens komen overeen met de database van MongoDB
