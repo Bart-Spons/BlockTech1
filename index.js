@@ -68,6 +68,7 @@ app.get("/add", (req, res) => {
   res.render("add.ejs");
 });
 
+
 //form laten werken
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -119,7 +120,12 @@ app.post("/addPerson", (req, res) => {
 
 //de 404 pagina
 app.use((req, res) => {
-  res.status(404).send("404, foute pagina");
+  res.locals.title = "404";
+  res.locals.activehome = "";
+  res.locals.activezoek = "";
+  res.locals.activematch = "";
+  res.locals.activeaccount = "";
+  res.status(404).render('404.ejs');
 });
 
 

@@ -1,62 +1,50 @@
+:root {
+  --main-bg-color: #f7f1e3;
+  --main-title-color: ;
+  --main-button-color: #d1c3a2;
+  --main-button-bg: #fff;
+  --main-button-border: 2px solid #f7f1e3;
+  --nav-bg-color: dimgrey;
+  --nav-li-hover: #1B816A;
+  --nav-active: #1B816A;
+  --main-a: #1B816A;
+  --main-h1: #1B816A;
+  --footer-bg: #1B816A;
+}
+
 header img{
     width: 100%;
 }
 
 body{
-    margin: 0;
-    padding: 0;
-    background-color: #f7f1e3;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-  }
-  
-main section {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
- main section img {
-    max-width: 100%;
-    height: auto;
-  }
+main section img {
+  max-width: 100%;
+  height: auto;
+}
 
   button{
     margin: .5em;
     padding: .7em;
     font-weight: bold;
-    color:#d1c3a2;
-    background-color: #fff;
-    border: 2px solid #f7f1e3;
+    color: var(--main-button-color);
+    background-color: var(--main-button-bg);
+    border: var(--main-button-border);
     border-radius: 15px;
     outline: none;
     cursor: pointer;
     transition: .3s;
     align-self: end;
-  }
-
- main section section:first-of-type button:focus{
-    color: red;
-    border: 2px solid red;
-    
-  }
-
- main section section:last-of-type button:focus{ 
-    color: green;
-    border: 2px solid green;
-  }
-
-  button:focus{
-    
-    
-    box-shadow: 0 0 0 1px rgb(red, green, blue);
-    animation: anim-shadow .3s forwards;
   }
 
 nav ul {
@@ -65,7 +53,7 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: dimgrey;
+    background-color: var(--nav-bg-color);
     flex: 1 1 0px;
     margin-bottom: revert;
     margin-top: -0.3em;
@@ -74,14 +62,15 @@ nav ul {
   /* style for the nav bar list item */
   nav li a {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px;
     text-decoration: none;
   }
 
   main img{
-    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
   }
   
   /* style for nav li */
@@ -96,14 +85,12 @@ nav ul {
   
   /* if you move the curses over the nav bar if shows a dark color */
   nav li a:hover:not(.active) {
-    background-color: #111;
+    background-color: var(--nav-li-hover);
   }
   
-
-
   /* local page turns green in nav bar */
   .active {
-  background-color: #1B816A;
+  background-color: var(--nav-active);
       margin-top: 1px;
   }
 
@@ -112,7 +99,13 @@ form{
 }
 
   a{
-    color: #d1c3a2;
+    color: var(--main-a);
+    text-decoration:none;
+  }
+
+  main section{
+    display:flex; 
+    justify-content:center;
   }
 
   /* Styling for the h1(title of the page) */
@@ -121,7 +114,7 @@ form{
       padding: 0.5em;
       font-family: Avenir black;
       font-size: 1.8em;
-      color: #1B816A;
+      color: var(--main-h1);
   }
   
   /* styling for h2 and h3 */
@@ -155,7 +148,7 @@ form{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #1B816A;
+    background-color: var(--footer-bg);
     color: white;
     text-align: center;
     margin-top: 19em;

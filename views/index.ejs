@@ -1,13 +1,13 @@
 <%- include("header.ejs")%>
-    <h1>Welkom bij mijn voetbal applicatie</h1>
-
-    <h3>quote van de dag (motivatie)</h3>
-    <p>
-        <%= quotes %>
-    </p>
-
-    <button><a href="/add">Voeg een speler toe</a></button>
-
-    <button><a href="/search">Zoek een speler</a></button>
-
+    <main>
+        <h1>Welkom bij mijn voetbal applicatie</h1>
+        <h2>quote van de dag (motivatie)</h2>
+        <p>
+            <%= quotes %>
+        </p>
+        <section>
+            <button><a href="/add">Voeg een speler toe</a></button>
+            <button><a href="/search">Zoek een speler</a></button>
+        </section>
+    </main>
     <%- include("footer.ejs")%>
