@@ -3,17 +3,18 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const express = require('express');
 const app = express();
 
-//dit is voor de form
+//Dit is voor de form
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//openen via localhost/1900
+//Openen via localhost/1900
 const port = 1900;
 
+//Openbaar en ejs gebruiken
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-// Laad het wachtworod in van het .env bestand
+//Laad het wachtworod in van het .env bestand
 require('dotenv').config();
 const password = process.env.PASSWORD;
 const uri = "mongodb+srv://bartspons31:" + password + "@cluster0.0r8mcrj.mongodb.net/?retryWrites=true&w=majority";
@@ -68,7 +69,6 @@ app.get("/add", (req, res) => {
   res.render("add.ejs");
 });
 
-
 //Specifiek mijn database zoeken in MongDB
 const database = client.db("BackEnd");
 const collection = database.collection("Bart");
@@ -101,12 +101,13 @@ app.post("/search", (req, res) => {
 
 app.post("/addPerson", (req, res) => {
   const person = {
+    //Gegevens komen overeen met de database van MongoDB
     naam: req.body.naam,
     positie: req.body.positie,
     woonplaats: req.body.woonplaats
   };
   collection.insertOne(person, () => {
-  // Redirect to the serach page to show the updated collection
+    // Redirect to the serach page to show the updated collection
     res.redirect("/search", { person });
   });
 });
