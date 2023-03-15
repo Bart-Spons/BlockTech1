@@ -1,3 +1,4 @@
+/* Ordening is chronologisch */
 /* Verzameling van alle kleuren */
 :root {
   --main-bg-color: #f7f1e3;
@@ -13,6 +14,7 @@
   --footer-bg: #1B816A;
 }
 
+/* Algemeen */
 body{
   margin: 0;
   padding: 0;
@@ -37,7 +39,7 @@ nav ul {
   margin-top: -0.3em;
 }
   
-/* style for nav li */
+/* vier keer een li in blokjes, allemaal 25% */
 nav li{
   width: 25%;
 }  
@@ -50,24 +52,24 @@ nav li a {
   text-decoration: none;
 }
 
-/* style for image in navbar */
+/* afbeeldingen in nav */
 nav ul li a img{
   height: 2em;
 }
   
-/* if you move the curses over the nav bar if shows a dark color */
+/* Als je hovert over de li, dan krijgt deze een donkere kleur */
 nav li a:hover:not(.active) {
   background-color: var(--nav-li-hover);
 }
   
-/* local page turns green in nav bar */
+/* De huidige pagina waar de gebruiker zich bevind, de li is groen */
 .active {
   background-color: var(--nav-active);
   margin-top: 1px;
 }
 
 /* Start main */
-
+/* Gebruikt op de index.ejs */
 button{
   margin: .5em;
   padding: .7em;
@@ -102,7 +104,8 @@ main img{
   max-width: 50%;
 }
 
-/* Styling for the h1(title of the page) */
+/* Styling for the text */
+/* Titel */
 h1{
   text-align: center;
   padding: 0.5em;
@@ -111,7 +114,7 @@ h1{
   color: var(--main-h1);
 }
   
-/* styling for h2 and h3 */
+/* styling voor de headers */
 h2,h3,h4,h5{
   text-align: center;
   font-family: Avenir black;
@@ -147,22 +150,18 @@ footer{
   margin-top: 19em;
 }
 
-/* style for the text in the footer */
 footer p{
   margin: 0.5em;
 }
 
-/* style for the text in the footer */
 footer section{
   display: flex;
 }
 
-/* style for the first content section in the footer */
 .footeritem{
   width: 50%;
 }
 
-/* style for the second content section in the footer */
 .footeritem2{
   width: 50%;
   justify-content: right;
