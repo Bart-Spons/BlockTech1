@@ -1,13 +1,12 @@
-// Vijf kleuren die gebruikt gaan worden
-const colors = ["red", "orange", "green", "blue", "purple"];
-let index = 0;
-const elem = document.getElementById("changeMe");
-
-// Kleur veranderen elke vijf seconden
-setInterval(() => {
-  elem.style.color = colors[index];
-  index++;
-  if (index >= colors.length) {
-    index = 0;
-  }
-}, 5000);
+//Bevestiging dat er een speler is toegevoegd
+const addPlayerButton = document.getElementById('addPlayerButton');
+  addPlayerButton.addEventListener('click', function() {
+    const naamInput = document.getElementById('naam');
+    const woonplaatsInput = document.getElementById('woonplaats');
+    const positieInput = document.getElementById('positie');
+    const naam = naamInput.value;
+    const woonplaats = woonplaatsInput.value;
+    const positie = positieInput.value;
+    //Het bericht
+    alert(`Je hebt ${naam} uit ${woonplaats} toegevoegd en zijn/haar positie is ${positie}!`);
+  });

@@ -11,6 +11,7 @@
   --nav-active: #1B816A;
   --main-a: #1B816A;
   --main-h1: #1B816A;
+  --button-submit: #1B816A;
   --footer-bg: #1B816A;
 }
 
@@ -136,6 +137,40 @@ main a{
   display: flex;
   justify-content: center; 
   align-items: center;
+}
+
+/* style the input field */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -2em;
+}
+
+.form label {
+  margin: 1em 0 1em 0;
+}
+
+.form input,
+.form select {
+  padding: 10px;
+  border: none;
+  border-radius: 1em;
+  margin-bottom: 2em;
+  width: 80%; /* set width to 80% */
+  box-sizing: border-box;
+  display: block; /* display the element as a block element */
+  margin: 0 auto; /* center the element using margin */
+}
+
+#addPlayerButton {
+  background-color: var(--button-submit);
+  color: white;
+  padding: 1em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  margin-top: 2em;
 }
 
 /* Start footer */
